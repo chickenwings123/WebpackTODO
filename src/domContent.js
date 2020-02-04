@@ -1,6 +1,5 @@
  
 const mainDiv = document.getElementById("mainDiv") 
-const formDiv = document.getElementById("formDiv") 
 const sidebarDiv = document.getElementById("sidebarDiv") 
 
 const listBUtton = () => { 
@@ -17,20 +16,7 @@ hide_show_listCard.addEventListener('click', ()=> {
 }
 listBUtton();
  
-const projectButon = () => { 
-    const createProjButton = document.createElement('button');
-    createProjButton.innerHTML ="Add a Project"
-    createProjButton.addEventListener('click', () => {
-        if (newProjectDiv.style.display === "none"){
-            newProjectDiv.style.display = "block";
-          } else {
-            newProjectDiv.style.display = "none";
-          }
-    }  );
-    mainDiv.appendChild(createProjButton);
-}
 
-projectButon();
 
 const listCard = ( i) => {
     const listDiv = document.getElementById("listDiv")
@@ -58,25 +44,10 @@ const listCard = ( i) => {
 
 }
 
-const project_Div =  (y) => {
-    const newProjectDiv = document.createElement('div');
-    newProjectDiv.id = "proj_create"
 
-    const projectTitle = document.createElement('h1');
-    projectTitle.id=('title'+y)
-    newProjectDiv.appendChild(projectTitle);
-
-    const projectDescription = document.createElement('h3');
-    projectDescription.id = ('description'+y)
-    newProjectDiv.appendChild(projectDescription);
-
-    mainDiv.appendChild(newProjectDiv);
- 
-}
- 
 
 
 
 export {listCard,
         listBUtton,
-    project_Div}
+    }

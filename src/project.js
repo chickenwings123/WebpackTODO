@@ -11,8 +11,7 @@ class Project {
              
             let projDescription = document.getElementById('description'+y);
             projDescription.textContent=this.description;
-            let listPriority = document.getElementById('priority_id'+i);
-            listPriority.textContent= this.priority;
+            
         }
     }     
 

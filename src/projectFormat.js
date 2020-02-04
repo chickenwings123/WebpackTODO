@@ -1,10 +1,11 @@
-import { project_Div } from "./domContent";
+import { project_Div } from "./projContent";
 import { Project } from "./project";
-
+import { projectButon } from "./projContent";
 
 let y=0;    
 
 const projectAddForm = () => {
+    projectButon()
     const mainDiv = document.getElementById('mainDiv')
     const projDIV = document.createElement('div')
     projDIV.id="projFormat"
@@ -24,6 +25,7 @@ const projectAddForm = () => {
  
     const proj_submit_btn = document.createElement('input');
     proj_submit_btn.type="submit";
+    proj_submit_btn.innerText="Submit Project"
     projectForm.appendChild(proj_submit_btn);
  
     projDIV.appendChild(projectForm)
@@ -32,6 +34,7 @@ const projectAddForm = () => {
     document.getElementById('projFORM').addEventListener('submit', (e) => {
 
         project_Div(y);
+        
         const projData = new FormData(e.target);
         const projTitle = projData.get('projTitle');
         const proj_Description = projData.get('proj_Description');
