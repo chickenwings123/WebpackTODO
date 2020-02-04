@@ -1,0 +1,17 @@
+ 
+#sidebar{
+    float: left;
+     width:200px;
+    height:600px;
+    border-collapse: green;
+    border-style: dotted;
+}
+#listDiv {
+    display:grid;
+    
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(6,1fr);
+}
+button{
+    height: 20px;
+}
