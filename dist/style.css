@@ -3,7 +3,7 @@
     float: left;
      width:200px;
     height:600px;
-    border-color: hotpink;
+    border-color: rgb(105, 255, 105);
     border-style: dotted;
     background-color: lightblue;
     z-index: 2;
@@ -38,12 +38,13 @@ button{
    
 
  }
-#listFormID, #projFormat  {
+#listFormID {
     display:grid;
     grid-gap: 5px;
     width: 80px;
 }
-form{
-    margin-left: 30px;
+#formDiv{ 
+
+display:none;
 }
  

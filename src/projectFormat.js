@@ -14,12 +14,12 @@ const projectAddForm = () => {
     projectForm.id="projFORM"
 
     const projTitle = document.createElement('input');
+    projTitle.name="projTitle";
     projTitle.type = "text";
-    projTitle.value="projTitle";
     projectForm.appendChild(projTitle);
 
     const proj_Description = document.createElement('textarea');
-    proj_Description.value="proj_Description"
+    proj_Description.name="proj_Description"
     projectForm.appendChild(proj_Description);
  
     const proj_submit_btn = document.createElement('input');

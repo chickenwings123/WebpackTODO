@@ -1,4 +1,4 @@
-
+ 
 class getTodoInfo {
     constructor(title,description,dueDate,priority,num){
         this.title=title;
@@ -20,6 +20,26 @@ class getTodoInfo {
     }     
 
 }
-   
-export {getTodoInfo}
+ 
 
+const listBUtton = () => { 
+    const nav_div = document.getElementById('navbar');
+    const formTodoNew = document.getElementById('formDiv');
+    const newtodoBtn = document.createElement('button')
+    newtodoBtn.classList.add("button2")
+    newtodoBtn.innerHTML="Create a todo"//add new to do
+    newtodoBtn.addEventListener('click', ()=> {
+        if (formTodoNew.style.display === "none") {
+            formTodoNew.style.display = "block";
+              } else {
+                formTodoNew.style.display = "none";
+              }
+        })
+        nav_div.appendChild(newtodoBtn)
+    }
+    
+
+export {getTodoInfo,
+        listBUtton}
+
+        

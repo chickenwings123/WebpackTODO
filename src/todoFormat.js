@@ -1,11 +1,16 @@
 import { getTodoInfo } from "./todoInfo";
 import { listCard } from "./domContent";
+ 
+import {addnewTodo} from "./todoInfo"
 
 let i = 0;
 
      
 const todoAddForm = () => {
-    const mainDiv = document.getElementById('mainDiv')
+    const nav_div = document.getElementById('navbar');
+     
+
+    const mainDiv = document.getElementById('formDiv')
     const todoCard = document.createElement('div');
     todoCard.id="todoDiv";
    
@@ -14,28 +19,26 @@ const todoAddForm = () => {
 
     const todoTitle = document.createElement('input');
     todoTitle.type = "text";
-    todoTitle.value="Title";
+    todoTitle.name="todoTitle";
     todoForm.appendChild(todoTitle);
 
     const todoDescripton = document.createElement('input');
     todoDescripton.type = "text";
-    todoDescripton.value="todoDescripton"
+    todoDescripton.name="todoDescripton"
     todoForm.appendChild(todoDescripton);
 
     const dueDate = document.createElement('input');
-    dueDate.type = "date";
-    dueDate.value="dueDate"
+    dueDate.type = "text";
+    dueDate.name="dueDate"
     todoForm.appendChild(dueDate);
 
     const priority = document.createElement('input');
-    priority.type = "checkbox"
-    priority.value="Contact Us";
+    priority.type = "text";
+    priority.name="priority"
     todoForm.appendChild(priority);
 
     const todo_submit_btn = document.createElement('input');
     todo_submit_btn.type="submit";
-    todo_submit_btn.value="Add A Todo"
-
     todoForm.appendChild(todo_submit_btn);
 
     
@@ -63,5 +66,10 @@ const todocreateDiv = () => {
     }
     )
 }
+
+
+ 
+
+
 export {todoAddForm,
     todocreateDiv}
