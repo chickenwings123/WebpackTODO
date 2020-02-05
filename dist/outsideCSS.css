@@ -1,0 +1,28 @@
+.button2{
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-family:'Roboto',sans-serif;
+    font-weight:400;
+    color:rgb(42, 184, 72);
+    text-align:center;
+    transition: all 0.15s;
+    }
+    .button2:hover{
+    color:rgb(196, 19, 19) 9, 9);
+    border-color:green
+    }
+    .button2:active{
+    color:rgb(75, 29, 29);
+    border-color:#BBBBBB;
+    }
+    @media all and (max-width:30em){
+         .button2{
+        display:block;
+        margin:0.4em auto;
+        }
+    } 

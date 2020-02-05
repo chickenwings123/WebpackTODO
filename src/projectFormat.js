@@ -15,26 +15,26 @@ const projectAddForm = () => {
 
     const projTitle = document.createElement('input');
     projTitle.type = "text";
-    projTitle.name="projTitle";
+    projTitle.value="projTitle";
     projectForm.appendChild(projTitle);
 
-    const proj_Description = document.createElement('input');
-    proj_Description.type = "text";
-    proj_Description.name="proj_Description"
+    const proj_Description = document.createElement('textarea');
+    proj_Description.value="proj_Description"
     projectForm.appendChild(proj_Description);
  
     const proj_submit_btn = document.createElement('input');
     proj_submit_btn.type="submit";
-    proj_submit_btn.innerText="Submit Project"
+    proj_submit_btn.id ="proj_submitbtn"
+    proj_submit_btn.value ="Add a project"
     projectForm.appendChild(proj_submit_btn);
- 
+    
     projDIV.appendChild(projectForm)
     mainDiv.appendChild(projDIV); 
 
+}
+const projaddButton = () => {
     document.getElementById('projFORM').addEventListener('submit', (e) => {
-
         project_Div(y);
-        
         const projData = new FormData(e.target);
         const projTitle = projData.get('projTitle');
         const proj_Description = projData.get('proj_Description');
@@ -44,14 +44,11 @@ const projectAddForm = () => {
         projContents.mergeProj(y);
         y++
         e.preventDefault()
-       
+    
     })
-
-    
-    
-    
 }
   
 export{
-    projectAddForm
+    projectAddForm,
+    projaddButton
 }

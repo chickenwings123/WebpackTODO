@@ -1,7 +1,9 @@
 
 const projectButon = () => { 
     const createProjButton = document.createElement('button');
-    createProjButton.innerHTML ="Add a Project"
+    const side_div = document.getElementById('sidebarDiv')
+    createProjButton.innerHTML ="Your Projects"
+    createProjButton.classList.add("button2")
     createProjButton.addEventListener('click', () => {
       
         if (projHold.style.display === "none"){
@@ -10,12 +12,12 @@ const projectButon = () => {
             projHold.style.display = "none";
           }
     }  );
-    mainDiv.appendChild(createProjButton);
+    side_div.appendChild(createProjButton);
 }
  
 const project_Div =  (y) => {
 
-    const projHold = document.getElementById('projHold')
+    const proj_Hold = document.getElementById('projHold')
 
     const newProjectDiv = document.createElement('div');
     newProjectDiv.id = "proj_create"
@@ -28,10 +30,9 @@ const project_Div =  (y) => {
     projectDescription.id = ('description'+y)
     newProjectDiv.appendChild(projectDescription);
 
-    projHold.appendChild(newProjectDiv);
+    proj_Hold.appendChild(newProjectDiv);
     const mainDiv = document.getElementById('mainDiv')
     mainDiv.appendChild(projHold)
- 
  
 }
 
