@@ -20,7 +20,7 @@ const project_Div =  (y) => {
     const proj_Hold = document.getElementById('projHold')
 
     const newProjectDiv = document.createElement('div');
-    newProjectDiv.id = "proj_create"
+    newProjectDiv.id = ('proj_create' + y)
 
     const projectTitle = document.createElement('h1');
     projectTitle.id=('title'+y)

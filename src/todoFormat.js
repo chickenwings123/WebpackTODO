@@ -1,16 +1,15 @@
 import { getTodoInfo } from "./todoInfo";
 import { listCard } from "./domContent";
- 
+import { Project } from "./project";
 import {addnewTodo} from "./todoInfo"
+import {projArr} from "./projectFormat"
 
 let i = 0;
 
-     
-const todoAddForm = () => {
-    const nav_div = document.getElementById('navbar');
-     
+const mainDiv = document.getElementById('formDiv')
 
-    const mainDiv = document.getElementById('formDiv')
+const todoAddForm = () => {
+    
     const todoCard = document.createElement('div');
     todoCard.id="todoDiv";
    
@@ -19,6 +18,7 @@ const todoAddForm = () => {
 
     const todoTitle = document.createElement('input');
     todoTitle.type = "text";
+    
     todoTitle.name="todoTitle";
     todoForm.appendChild(todoTitle);
 
@@ -36,7 +36,14 @@ const todoAddForm = () => {
     priority.type = "text";
     priority.name="priority"
     todoForm.appendChild(priority);
-
+    
+    const projSel = document.createElement('select');
+    projSel.id ="select_project"
+    const faj = document.createElement('option');
+    faj.textContent='fafa';
+    projSel.appendChild(faj)
+    todoForm.appendChild(projSel)
+ 
     const todo_submit_btn = document.createElement('input');
     todo_submit_btn.type="submit";
     todoForm.appendChild(todo_submit_btn);
@@ -49,7 +56,6 @@ const todoAddForm = () => {
 
 const todocreateDiv = () => {
     document.getElementById('listFormID').addEventListener('submit', (e) => {
-        
         listCard(i);
         const formData = new FormData(e.target);
         const todo_title = formData.get('todoTitle');
@@ -66,10 +72,15 @@ const todocreateDiv = () => {
     }
     )
 }
-
-
  
+const todoAdd_proj = (projName) => {
+    const proj_name= document.createElement('option')
+    proj_name.textContent = projName
+     document.getElementById('select_project').appendChild(proj_name)
 
+}
 
 export {todoAddForm,
-    todocreateDiv}
+    todocreateDiv,
+    todoAdd_proj
+    }

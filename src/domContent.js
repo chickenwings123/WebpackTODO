@@ -19,15 +19,20 @@ hide_show_listCard.addEventListener('click', ()=> {
 }
 
  
-const listCard = ( i) => {
+const listCard = (i) => {
    
     const listcardDiv = document.createElement('div');
     const divexpandButton = document.createElement('button');
-    
+   
+    const editBtn = document.createElement('button');
+
+    listcardDiv.appendChild(editBtn) ;
     divexpandButton.classList.add('expansion')
     listcardDiv.classList.add("listClass")
     listcardDiv.id=('listDivID'+i)
+
     const todoDivs= document.getElementById('todos')
+    
     const title_h1 = document.createElement('h1');
     title_h1.id=('title_h1'+i)
     const due_h3 = document.createElement('h3');
@@ -46,6 +51,10 @@ const listCard = ( i) => {
         description_h3.style.display = "none"
       }
     })
+    ///button so todos can be edited
+    editBtn.addEventListener('click', () => {
+      document.getElementById(('listDivID'+i)).contentEditable = "true";
+   })
 
     
     listcardDiv.appendChild(title_h1);
@@ -53,15 +62,12 @@ const listCard = ( i) => {
     listcardDiv.appendChild(description_h3);
     listcardDiv.appendChild(priority_h3);
     listcardDiv.appendChild(divexpandButton);
-
     todoDivs.appendChild(listcardDiv);
-
-    
+ 
 
 }
  
 
 export {listCard,
         listBUtton,
-        
     }

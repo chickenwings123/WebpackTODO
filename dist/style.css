@@ -38,13 +38,12 @@ button{
    
 
  }
-#listFormID {
-    display:grid;
+ #projFormat {
+    display:none;
     grid-gap: 5px;
     width: 80px;
 }
-#formDiv{ 
-
+#formDiv { 
 display:none;
 }
  
