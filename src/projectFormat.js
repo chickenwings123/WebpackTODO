@@ -6,13 +6,15 @@ import * as todoForm from "./todoFormat";
 let y=0;    
  
 const projectAddForm = () => {
+    //form for new project
     projectButon()
-    const mainDiv = document.getElementById('mainDiv')
+    const mainDiv = document.getElementById('forms')
     const projDIV = document.createElement('div')
     projDIV.id="projFormat"
 
     const projectForm = document.createElement('form');
     projectForm.id="projFORM"
+    projectForm.className="formStyle"
      
     const projTitle = document.createElement('input');
     projTitle.name="projTitle";
@@ -34,23 +36,32 @@ const projectAddForm = () => {
 
 }
 const projaddButton = () => {
+    //gets info for new project
     document.getElementById('projFORM').addEventListener('submit', (e) => {
-        project_Div(y);
+        
         const projData = new FormData(e.target);
         const projTitle = projData.get('projTitle');
         const proj_Description = projData.get('proj_Description');
         
         let projContents = new Project(projTitle,proj_Description,y,projTitle)
-       
+        project_Div(y,projTitle);
         projContents.mergeProj(y);
         y++
         projArr.push(projTitle)
  
         e.preventDefault()
+
         todoForm.todoAdd_proj(projTitle);
-    
+        
     }) 
+
 }
+
+
+const defaultProj = () => {
+
+}
+
 let projArr = []
 export{
     projectAddForm,

@@ -25,10 +25,11 @@ button{
     height: 400px;
     background-color: lightcoral;
     padding: 10px;
-    
-
+     
 }
-
+#todoDiv {
+    display: none;
+}
  #todos > div {
      float: left;
      padding: 20px;
@@ -40,10 +41,50 @@ button{
  }
  #projFormat {
     display:none;
-    grid-gap: 5px;
-    width: 80px;
-}
-#formDiv { 
-display:none;
+    
 }
  
+  
+
+ .blur {
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+ }
+ #forms{
+     height:400px;
+     width: 400px;
+     border-style: groove;
+     border-color: green;
+    border-radius: 9px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin: -200px 0 0 -200px;
+    background-color: lightblue;
+    display: none;
+    
+    
+ }
+ #forms > div {
+    position: absolute;
+    width:200px;
+    height: 200px;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+ }
+ .formStyle input,textarea{
+     border-radius: 5px;
+     padding: 5px;
+     margin: 5px;
+     background-color: rgba(235, 154, 154, 0.4);
+   
+     }
+
+#proj_submitbtn {
+    display: block;
+    margin: 0 auto;
+}

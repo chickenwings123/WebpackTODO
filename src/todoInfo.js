@@ -23,23 +23,29 @@ class getTodoInfo {
             return proj_locate
         }
 
-        
+
     }     
 
 }
  
 
 const listBUtton = () => { 
+    
     const nav_div = document.getElementById('navbar');
-    const formTodoNew = document.getElementById('formDiv');
+    const formTodoNew = document.getElementById('forms');
     const newtodoBtn = document.createElement('button')
     newtodoBtn.classList.add("button2")
-    newtodoBtn.innerHTML="Create a todo"//add new to do
-    newtodoBtn.addEventListener('click', ()=> {
+    newtodoBtn.innerHTML="Create a todo"//btn to add new to do
+    newtodoBtn.addEventListener('click', ()=> {//hide.show todo form
+        document.getElementById('mainDiv').className ="blur";
         if (formTodoNew.style.display === "block") {
             formTodoNew.style.display = "none";
-        
-        } else  {formTodoNew.style.display = "block" }
+            document.getElementById('todoDiv').style.display = "none";
+            document.getElementById('mainDiv').className =""
+            
+        } else  {formTodoNew.style.display = "block";
+    document.getElementById('todoDiv').style.display = "block";
+    document.getElementById('mainDiv').className ="blur"; }
 
         })
         nav_div.appendChild(newtodoBtn)

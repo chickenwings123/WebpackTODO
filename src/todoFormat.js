@@ -6,7 +6,7 @@ import {projArr} from "./projectFormat"
 
 let i = 0;
 
-const mainDiv = document.getElementById('formDiv')
+const mainDiv = document.getElementById('forms')
 
 const todoAddForm = () => {
     
@@ -39,16 +39,19 @@ const todoAddForm = () => {
     
     const projSel = document.createElement('select');
     projSel.id ="select_project"
-    const faj = document.createElement('option');
-    faj.textContent='fafa';
-    projSel.appendChild(faj)
-    todoForm.appendChild(projSel)
+    projSel.name="projLocation"
+
+//default project
+    //const defaultProj = document.createElement('option');
+  
+   // defaultProj.textContent="Default";
+    //projSel.appendChild(defaultProj);
+    todoForm.appendChild(projSel);
  
     const todo_submit_btn = document.createElement('input');
     todo_submit_btn.type="submit";
     todoForm.appendChild(todo_submit_btn);
-
-    
+ 
     todoCard.appendChild(todoForm);
     mainDiv.appendChild(todoCard);
      
@@ -56,15 +59,15 @@ const todoAddForm = () => {
 
 const todocreateDiv = () => {
     document.getElementById('listFormID').addEventListener('submit', (e) => {
-        listCard(i);
+       //gets todo info
         const formData = new FormData(e.target);
         const todo_title = formData.get('todoTitle');
         const todo_description = formData.get('todoDescripton');
         const formdueDate = formData.get('dueDate');
         const formPriority = formData.get('priority');
-        
-        let formContents = new getTodoInfo(todo_title,todo_description,formdueDate,formPriority,i)
-
+        const formProj = formData.get('projLocation');
+        let formContents = new getTodoInfo(todo_title,todo_description,formdueDate,formPriority,i,formProj)
+        listCard(i,formProj);
         formContents.mergeContent(i);
         i++
         e.preventDefault()

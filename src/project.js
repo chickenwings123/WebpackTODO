@@ -13,21 +13,27 @@ class Project {
              
             
         }
-    }     
-     
+    }        
 }
 
 const proj_new_btn = () => { 
     const nav_div = document.getElementById('navbar');
-    const formTodoNew = document.getElementById('projFormat');
+    const formTodoNew = document.getElementById('forms');//
     const newProjBtn = document.createElement('button')
     newProjBtn.classList.add("button2")
-    newProjBtn.innerHTML="Create a project"//add new proj
+    newProjBtn.innerHTML="Create a project"
+    //////add new proj
     newProjBtn.addEventListener('click', ()=> {
+        document.getElementById('mainDiv').className ="blur";
         if (formTodoNew.style.display === "block") {
-            formTodoNew.style.display = "none";}
+            formTodoNew.style.display = "none";
+            document.getElementById('mainDiv').className ="";
+            document.getElementById('projFormat').style.display="none"
+        }
              else {
                  formTodoNew.style.display = "block";
+                 document.getElementById('projFormat').style.display="block";
+                 document.getElementById('mainDiv').className ="blur";
              }
     
         })

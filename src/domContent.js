@@ -7,7 +7,7 @@ const listBUtton = () => {
 const hideTodos = document.getElementById('todos')
 const hide_show_listCard = document.createElement('button')
 hide_show_listCard.classList.add("button2")
-hide_show_listCard.innerHTML="Your Todos"//hides and shows the todos
+hide_show_listCard.innerHTML="Calendar"//hides and shows the todos
 hide_show_listCard.addEventListener('click', ()=> {
     if (hideTodos.style.display === "grid") {
       hideTodos.style.display = "none";
@@ -17,22 +17,26 @@ hide_show_listCard.addEventListener('click', ()=> {
     })
     sideDiv.appendChild(hide_show_listCard)
 }
+ 
 
  
-const listCard = (i) => {
-   
+const listCard = (i,projId) => {
+   //creates todo div
     const listcardDiv = document.createElement('div');
     const divexpandButton = document.createElement('button');
    
     const editBtn = document.createElement('button');
-
+    editBtn.classList.add('button2');
+    editBtn.innerHTML="Edit"
+    editBtn.value="off"
     listcardDiv.appendChild(editBtn) ;
-    divexpandButton.classList.add('expansion')
+    divexpandButton.classList.add('button2')
     listcardDiv.classList.add("listClass")
+    divexpandButton.innerHTML= "View  Details"
     listcardDiv.id=('listDivID'+i)
-
-    const todoDivs= document.getElementById('todos')
-    
+   
+    const todoDivs= document.getElementById(projId)
+    const mainTodoDiv = document.getElementById('todos')
     const title_h1 = document.createElement('h1');
     title_h1.id=('title_h1'+i)
     const due_h3 = document.createElement('h3');
@@ -52,8 +56,22 @@ const listCard = (i) => {
       }
     })
     ///button so todos can be edited
+    
     editBtn.addEventListener('click', () => {
-      document.getElementById(('listDivID'+i)).contentEditable = "true";
+      let currBtn =  editBtn.value
+      switch(currBtn){
+
+        case 'off':  document.getElementById(('listDivID'+i)).contentEditable = "true";
+                      editBtn.value = "on";
+                      editBtn.innerHTML="Save"
+                      break;
+
+        case 'on': document.getElementById(('listDivID'+i)).contentEditable = "false";
+        editBtn.value = "off";
+        editBtn.innerHTML="Edit"
+        break;
+        default:console.log('fa')
+      }
    })
 
     
@@ -63,6 +81,7 @@ const listCard = (i) => {
     listcardDiv.appendChild(priority_h3);
     listcardDiv.appendChild(divexpandButton);
     todoDivs.appendChild(listcardDiv);
+    
  
 
 }
