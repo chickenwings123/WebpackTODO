@@ -2,9 +2,11 @@ import { getTodoInfo } from "./todoInfo";
 import { listCard } from "./domContent";
 import { Project } from "./project";
 import {addnewTodo} from "./todoInfo"
-import {projArr} from "./projectFormat"
+import {exitDiv} from "./projectFormat"
 
 let i = 0;
+
+
 
 const mainDiv = document.getElementById('forms')
 
@@ -21,22 +23,48 @@ const todoAddForm = () => {
     
     todoTitle.name="todoTitle";
     todoForm.appendChild(todoTitle);
+    todoTitle.value="Title";
 
     const todoDescripton = document.createElement('input');
     todoDescripton.type = "text";
     todoDescripton.name="todoDescripton"
+    todoDescripton.value = "Description"
     todoForm.appendChild(todoDescripton);
 
     const dueDate = document.createElement('input');
-    dueDate.type = "text";
-    dueDate.name="dueDate"
+    dueDate.type = "date";
+    dueDate.name="dueDate";
+    dueDate.value = "Due Date"
     todoForm.appendChild(dueDate);
 
-    const priority = document.createElement('input');
-    priority.type = "text";
+    const priority = document.createElement('select');
+ 
     priority.name="priority"
+    const lowPrio = document.createElement('option');
+    lowPrio.name= "low"
+    lowPrio.textContent="Low";
+    priority.appendChild(lowPrio);
+    const highPrio = document.createElement('option');
+    highPrio.name ="high"
+    highPrio.textContent="High";
+    priority.appendChild(highPrio);
+
     todoForm.appendChild(priority);
     
+    const medPrio = document.createElement('option');
+    medPrio.textContent="Medium";
+    priority.appendChild(medPrio)
+    medPrio.name="med"
+
+    const exitBtn = document.createElement('button');
+    exitBtn.type="button"
+    exitBtn.name = "exit"
+    exitBtn.id = "exitTodo"
+    exitBtn.innerHTML="Exit"
+   
+   
+    todoForm.appendChild(exitBtn)
+
     const projSel = document.createElement('select');
     projSel.id ="select_project"
     projSel.name="projLocation"
@@ -46,6 +74,7 @@ const todoAddForm = () => {
   
    // defaultProj.textContent="Default";
     //projSel.appendChild(defaultProj);
+    
     todoForm.appendChild(projSel);
  
     const todo_submit_btn = document.createElement('input');
@@ -58,7 +87,14 @@ const todoAddForm = () => {
 }
 
 const todocreateDiv = () => {
+   
+/////////////////////////////////////////////////
+// create a close  button 
+////////////////////
+
+
     document.getElementById('listFormID').addEventListener('submit', (e) => {
+        if (document.getElementById('forms').contains(e.target)){ 
        //gets todo info
         const formData = new FormData(e.target);
         const todo_title = formData.get('todoTitle');
@@ -71,9 +107,14 @@ const todocreateDiv = () => {
         formContents.mergeContent(i);
         i++
         e.preventDefault()
+        document.getElementById('forms').style.display="none";
+        document.getElementById('mainDiv').className ="";
         
+    } else return
     }
     )
+
+
 }
  
 const todoAdd_proj = (projName) => {
@@ -82,8 +123,18 @@ const todoAdd_proj = (projName) => {
      document.getElementById('select_project').appendChild(proj_name)
 
 }
+ 
 
+const exitBtnFunc = (whichForm) => { 
+    
+  document.getElementById(whichForm).addEventListener('click', () => {
+    document.getElementById('forms').style.display="none";
+    document.getElementById('mainDiv').className =""
+}
+)  }
+ 
 export {todoAddForm,
     todocreateDiv,
-    todoAdd_proj
+    todoAdd_proj,
+    exitBtnFunc
     }

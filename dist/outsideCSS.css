@@ -13,12 +13,13 @@
     transition: all 0.15s;
     }
     .button2:hover{
-    color:rgb(196, 19, 19) 9, 9);
+    color:rgb(196, 19, 19);
     border-color:green
     }
     .button2:active{
     color:rgb(75, 29, 29);
     border-color:#BBBBBB;
+   
     }
     @media all and (max-width:30em){
          .button2{

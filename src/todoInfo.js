@@ -1,4 +1,4 @@
- 
+ import { exitBtnFunc } from "./todoFormat"
 class getTodoInfo {
     constructor(title,description,dueDate,priority,num,projLocation){
         this.title=title;
@@ -18,9 +18,9 @@ class getTodoInfo {
             listDescription.textContent=this.description;
             let listPriority = document.getElementById('priority_id'+i);
             listPriority.textContent= this.priority;
-            let proj_locate = this.projLocation;
+             
 
-            return proj_locate
+
         }
 
 
@@ -30,13 +30,17 @@ class getTodoInfo {
  
 
 const listBUtton = () => { 
+
+   
     
     const nav_div = document.getElementById('navbar');
     const formTodoNew = document.getElementById('forms');
     const newtodoBtn = document.createElement('button')
-    newtodoBtn.classList.add("button2")
+    newtodoBtn.id="NewToDo"
+    
     newtodoBtn.innerHTML="Create a todo"//btn to add new to do
     newtodoBtn.addEventListener('click', ()=> {//hide.show todo form
+
         document.getElementById('mainDiv').className ="blur";
         if (formTodoNew.style.display === "block") {
             formTodoNew.style.display = "none";
@@ -45,15 +49,14 @@ const listBUtton = () => {
             
         } else  {formTodoNew.style.display = "block";
     document.getElementById('todoDiv').style.display = "block";
+    document.getElementById('projFormat').style.display="none";
     document.getElementById('mainDiv').className ="blur"; }
-
+    
         })
         nav_div.appendChild(newtodoBtn)
+        
     }
     
-
- 
-
 export {getTodoInfo,
         listBUtton}
 

@@ -5,9 +5,11 @@ import * as todoForm from "./todoFormat";
 
 let y=0;    
  
+
 const projectAddForm = () => {
     //form for new project
     projectButon()
+   
     const mainDiv = document.getElementById('forms')
     const projDIV = document.createElement('div')
     projDIV.id="projFormat"
@@ -25,6 +27,14 @@ const projectAddForm = () => {
     proj_Description.name="proj_Description"
     projectForm.appendChild(proj_Description);
  
+    const exitProj = document.createElement('button');
+    exitProj.id="exitProji"
+    exitProj.name="exitProject";
+    exitProj.innerHTML="Exit"
+    projDIV.appendChild(exitProj)
+    
+    
+
     const proj_submit_btn = document.createElement('input');
     proj_submit_btn.type="submit";
     proj_submit_btn.id ="proj_submitbtn"
@@ -33,7 +43,7 @@ const projectAddForm = () => {
     
     projDIV.appendChild(projectForm)
     mainDiv.appendChild(projDIV); 
-
+    
 }
 const projaddButton = () => {
     //gets info for new project
@@ -44,6 +54,7 @@ const projaddButton = () => {
         const proj_Description = projData.get('proj_Description');
         
         let projContents = new Project(projTitle,proj_Description,y,projTitle)
+        
         project_Div(y,projTitle);
         projContents.mergeProj(y);
         y++
@@ -52,6 +63,8 @@ const projaddButton = () => {
         e.preventDefault()
 
         todoForm.todoAdd_proj(projTitle);
+        document.getElementById('forms').style.display="none";
+        document.getElementById('mainDiv').className ="";
         
     }) 
 

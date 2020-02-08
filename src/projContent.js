@@ -5,6 +5,7 @@ const projectButon = () => {
     const side_div = document.getElementById('sidebarDiv')
     createProjButton.innerHTML ="Your Projects"
     createProjButton.classList.add("button2")
+    const thisId = projHold.id
     createProjButton.addEventListener('click', () => {
       
         if (projHold.style.display === "none" ){
@@ -14,6 +15,7 @@ const projectButon = () => {
           }
     }  );
     side_div.appendChild(createProjButton);
+     
 }
  
 const project_Div =  (y,proj_title) => {
