@@ -11,5 +11,9 @@
   "devDependencies": {
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^5.2.1",
+    "simplepicker": "^2.0.1"
   }
 }

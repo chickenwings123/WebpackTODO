@@ -10,16 +10,22 @@
     background-color: lightblue;
    
 }
+
 body{
-    background-image: url('https://cdn.wallpapersafari.com/49/91/oXUWTi.jpg');
+  background-image: url('https://cdn.wallpapersafari.com/49/91/oXUWTi.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+    
 #navbar{
     float:inline-end;
     width:50%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-     height:100px;
-     width:50%;
+    height:100px;
+    width:50%;
     border-color: rgb(105, 255, 105);
     border-style: dotted;
     background-color: lightblue;
@@ -31,7 +37,7 @@ body{
 }
 button{
     display: block;
-    ;
+     
 }
 #listDiv{
     background-color: lightcoral;
@@ -40,8 +46,6 @@ button{
     display: none;
     height: 400px;
     background-color: lightcoral;
-   
-     
 }
 #todoDiv {
     display: none;
@@ -49,18 +53,14 @@ button{
  #todos > div {
      float: left;
      padding: 20px;
-     
      border-style: groove;
      border-color: lightgray;
-   
 
  }
  #projFormat {
     display:none;
     
 }
- 
-  
 
  .blur {
     -webkit-filter: blur(10px);
@@ -104,4 +104,50 @@ button{
    
      }
 
- 
+.listClass {
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: aqua;
+
+}
+.listClass button {
+    display: flex;
+    flex-direction: row;
+}
+
+.projectDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    width: 400px;
+    
+}
+#projSubDiv{
+    grid-column-end: span 2;
+    text-align: center;
+     
+}
+.projectDiv button {
+    float: right;
+
+}
+#nav_side{
+    display: flex;
+}
+#projHold{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: ivory;
+}
+
+#exitProji{
+    float: right;
+    margin: -40%;
+}
+ #NewToDo{
+     background-image: url(Images/todonew.png);
+     background-size: 100%;
+      
+ }
+  

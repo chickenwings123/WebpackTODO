@@ -34,7 +34,14 @@ const listCard = (i,projId) => {
     listcardDiv.classList.add("listClass")
     divexpandButton.innerHTML= "View  Details"
     listcardDiv.id=('listDivID'+i)
-   
+   //butn to delete to do
+    const deleteTodo = document.createElement('button');
+    deleteTodo.id="todo_delete";
+    deleteTodo.innerHTML="Delete"
+    deleteTodo.type="button";
+    listcardDiv.appendChild(deleteTodo)
+    deleteTodo.classList="button2"
+
     const todoDivs= document.getElementById(projId)
     const mainTodoDiv = document.getElementById('todos')
     const title_h1 = document.createElement('h1');
@@ -48,11 +55,21 @@ const listCard = (i,projId) => {
     priority_h3.id = ('priority_id'+i)
     priority_h3.style.display="none"
 
+
+  deleteTodo.addEventListener('click', () => {
+    listcardDiv.outerHTML = "";
+
+  })
+
+
+
     divexpandButton.addEventListener('click', () => {
-      if (description_h3.style.display === "none"){
-        description_h3.style.display = "block"
-      } else if (description_h3.style.display === "block") {
-        description_h3.style.display = "none"
+      if (description_h3.style.display === "none"  && priority_h3.style.display==="none"){
+        description_h3.style.display = "block";
+        priority_h3.style.display="block";
+      } else if (priority_h3.style.display === "block" && description_h3.style.display==="block") {
+        description_h3.style.display = "none";
+        priority_h3.style.display="none";
       }
     })
     ///button so todos can be edited

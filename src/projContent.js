@@ -25,15 +25,24 @@ const project_Div =  (y,proj_title) => {
 
     const newProjectDiv = document.createElement('div');
     newProjectDiv.id = (proj_title)
+    newProjectDiv.classList ="projectDiv"
+
+    const newProjSubDiv = document.createElement('div');
+    newProjSubDiv.id ="projSubDiv";
 
     const projectTitle = document.createElement('h1');
     projectTitle.id=('title'+y)
-    newProjectDiv.appendChild(projectTitle);
+    newProjSubDiv.appendChild(projectTitle);
+
+    const breakProj = document.createElement('br')
+    breakProj.name="break_proj"
+    newProjSubDiv.appendChild(breakProj)
 
     const projectDescription = document.createElement('h3');
     projectDescription.id = ('description'+y)
-    newProjectDiv.appendChild(projectDescription);
+    newProjSubDiv.appendChild(projectDescription);
 
+    newProjectDiv.appendChild(newProjSubDiv);
     proj_Hold.appendChild(newProjectDiv);
     const mainDiv = document.getElementById('mainDiv')
     mainDiv.appendChild(projHold)
@@ -41,7 +50,7 @@ const project_Div =  (y,proj_title) => {
 }
 
 const defaultProj = () => {
-  project_Div('0','Default')
+  
   document.getElementById('title0').textContent="Default Project"
   document.getElementById('description0').textContent="List of to-dos"
 }

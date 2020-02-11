@@ -17,12 +17,8 @@ class getTodoInfo {
             let listDescription = document.getElementById('description_id'+i);
             listDescription.textContent=this.description;
             let listPriority = document.getElementById('priority_id'+i);
-            listPriority.textContent= this.priority;
-             
-
-
+            listPriority.textContent= this.priority; 
         }
-
 
     }     
 
@@ -35,12 +31,11 @@ const listBUtton = () => {
     
     const nav_div = document.getElementById('navbar');
     const formTodoNew = document.getElementById('forms');
-    const newtodoBtn = document.createElement('button')
+    const newtodoBtn = document.createElement('button');
+
     newtodoBtn.id="NewToDo"
-    
     newtodoBtn.innerHTML="Create a todo"//btn to add new to do
     newtodoBtn.addEventListener('click', ()=> {//hide.show todo form
-
         document.getElementById('mainDiv').className ="blur";
         if (formTodoNew.style.display === "block") {
             formTodoNew.style.display = "none";

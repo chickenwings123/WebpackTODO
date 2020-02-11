@@ -3,8 +3,9 @@ import { Project } from "./project";
 import { projectButon } from "./projContent";
 import * as todoForm from "./todoFormat";
 
-let y=0;    
+let y=1;    
  
+
 
 const projectAddForm = () => {
     //form for new project
@@ -21,20 +22,22 @@ const projectAddForm = () => {
     const projTitle = document.createElement('input');
     projTitle.name="projTitle";
     projTitle.type = "text";
+    projTitle.placeholder="Project Title"
+    projTitle.required=true;
     projectForm.appendChild(projTitle);
 
     const proj_Description = document.createElement('textarea');
-    proj_Description.name="proj_Description"
+    proj_Description.name="proj_Description";
+    proj_Description.placeholder="Project Description"
+    proj_Description.required=true;
     projectForm.appendChild(proj_Description);
  
     const exitProj = document.createElement('button');
-    exitProj.id="exitProji"
+    exitProj.id="exitProji";
     exitProj.name="exitProject";
-    exitProj.innerHTML="Exit"
+    exitProj.innerHTML="Exit";
     projDIV.appendChild(exitProj)
-    
-    
-
+     
     const proj_submit_btn = document.createElement('input');
     proj_submit_btn.type="submit";
     proj_submit_btn.id ="proj_submitbtn"
@@ -44,9 +47,12 @@ const projectAddForm = () => {
     projDIV.appendChild(projectForm)
     mainDiv.appendChild(projDIV); 
     
+    
 }
 const projaddButton = () => {
     //gets info for new project
+    let project_Form = document.getElementById('projFORM')
+ 
     document.getElementById('projFORM').addEventListener('submit', (e) => {
         
         const projData = new FormData(e.target);
@@ -59,7 +65,7 @@ const projaddButton = () => {
         projContents.mergeProj(y);
         y++
         projArr.push(projTitle)
- 
+        
         e.preventDefault()
 
         todoForm.todoAdd_proj(projTitle);
@@ -71,9 +77,7 @@ const projaddButton = () => {
 }
 
 
-const defaultProj = () => {
-
-}
+ 
 
 let projArr = []
 export{
