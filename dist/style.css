@@ -1,44 +1,52 @@
- 
-#sidebarDiv{
-    float: initial;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-     height:100px;
-     width:50%;
-    border-color: rgb(105, 255, 105);
-    border-style: dotted;
-    background-color: lightblue;
-   
-}
 
 body{
-  background-image: url('https://cdn.wallpapersafari.com/49/91/oXUWTi.jpg');
-  -webkit-background-size: cover;
+    background-image: url(Images/whitebackground.jpg);
+     
+    -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
     
-#navbar{
+#UrProjBtn{
+    background-image: url(Images/folders.png);
+}
+#Calendar {
+    background-image: url(Images/calendar.png);
+}
+#navbar, #sidebarDiv{
     float:inline-end;
-    width:50%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height:100px;
-    width:50%;
-    border-color: rgb(105, 255, 105);
-    border-style: dotted;
-    background-color: lightblue;
+    column-gap: 10px;
+
+ 
+     
 }
+#navbar button, #sidebarDiv button{
+    background-size: 100%;
+    border-radius: 20px;
+    height: 90px;
+    width: 90px;
+}
+#NewToDo{
+    background-image: url(Images/todonew.png);
+    background-repeat: no-repeat;
+    
+
+}
+#New_Proj{
+    background-image: url(Images/newproject.png);
+    background-repeat: no-repeat;
+}
+
 #listDiv {
     display:grid;
     grid-template-rows: repeat(6,1fr);
     grid-template-columns: repeat(6,1fr);
 }
-button{
-    display: block;
-     
-}
+   
+ 
 #listDiv{
     background-color: lightcoral;
 }
@@ -54,7 +62,7 @@ button{
      float: left;
      padding: 20px;
      border-style: groove;
-     border-color: lightgray;
+      
 
  }
  #projFormat {
@@ -74,14 +82,13 @@ button{
  #forms{
      height:400px;
      width: 400px;
-     border-style: groove;
-     border-color: green;
     border-radius: 9px;
     position: absolute;
     top:50%;
     left: 50%;
     margin: -200px 0 0 -200px;
-    background-color: lightblue;
+    background-image: url(Images/formbkgrnd.jpg);
+    background-repeat: no-repeat;
     display: none;
     z-index: 1;
     
@@ -108,7 +115,7 @@ button{
     border-style: solid;
     border-radius: 5px;
     padding: 5px;
-    background-color: aqua;
+    max-height: 400px;    
 
 }
 .listClass button {
@@ -117,10 +124,9 @@ button{
 }
 
 .projectDiv {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    width: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     
 }
 #projSubDiv{
@@ -138,16 +144,24 @@ button{
 #projHold{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: ivory;
+    
+   
 }
 
-#exitProji{
+#exitProji, #exitTodo{
+    background-image: url(Images/exit.png);
+    height: 40px;
+    width: 40px;
+    background-size: 100%;
+    border-radius: 10px;
     float: right;
     margin: -40%;
 }
- #NewToDo{
-     background-image: url(Images/todonew.png);
-     background-size: 100%;
-      
- }
+input[type="text"], textarea {
+
+    background-color : #ebebeb; 
   
+  }
+  #exitTodo{
+       margin-top: -70%;
+  }

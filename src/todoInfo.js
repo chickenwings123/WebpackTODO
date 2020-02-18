@@ -13,11 +13,11 @@ class getTodoInfo {
             
             listTitle.textContent = this.title;
             let listDue = document.getElementById('due_id'+i);
-            listDue.textContent=this.dueDate;
+            listDue.textContent="Duedate: " + this.dueDate;
             let listDescription = document.getElementById('description_id'+i);
             listDescription.textContent=this.description;
             let listPriority = document.getElementById('priority_id'+i);
-            listPriority.textContent= this.priority; 
+            listPriority.textContent= this.priority + " priority"; 
         }
 
     }     
@@ -33,8 +33,8 @@ const listBUtton = () => {
     const formTodoNew = document.getElementById('forms');
     const newtodoBtn = document.createElement('button');
 
-    newtodoBtn.id="NewToDo"
-    newtodoBtn.innerHTML="Create a todo"//btn to add new to do
+    newtodoBtn.id="NewToDo";
+     //btn to add new to do
     newtodoBtn.addEventListener('click', ()=> {//hide.show todo form
         document.getElementById('mainDiv').className ="blur";
         if (formTodoNew.style.display === "block") {

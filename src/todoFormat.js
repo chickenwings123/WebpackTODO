@@ -48,21 +48,21 @@ const todoAddForm = () => {
 
     const lowPrio = document.createElement('option');
     lowPrio.name= "low"
-    lowPrio.textContent="Low";
+    lowPrio.textContent="Low Priority";
     priority.appendChild(lowPrio);
 
     const medPrio = document.createElement('option');
-    medPrio.textContent="Medium";
+    medPrio.textContent="Medium Priority";
     medPrio.name="med"
     priority.appendChild(medPrio)
     
 
     const highPrio = document.createElement('option');
     highPrio.name ="high"
-    highPrio.textContent="High";
+    highPrio.textContent="High Priority";
     priority.appendChild(highPrio);
     todoForm.appendChild(priority);
-    highPrio.innerHTML= "High";
+   
     
 
 
@@ -89,7 +89,7 @@ const todoAddForm = () => {
     exitBtn.type="button"
     exitBtn.name = "exit"
     exitBtn.id = "exitTodo"
-    exitBtn.innerHTML="Exit"
+    
 
     todoForm.appendChild(exitBtn)
     todoCard.appendChild(todoForm);
@@ -114,11 +114,13 @@ const todocreateDiv = () => {
         const formProj = formData.get('projLocation');
         let formContents = new getTodoInfo(todo_title,todo_description,formdueDate,formPriority,i,formProj)
         listCard(i,formProj);
+        
         formContents.mergeContent(i);
         i++
         e.preventDefault()
         document.getElementById('forms').style.display="none";
         document.getElementById('mainDiv').className ="";
+        document.getElementById('listFormID').reset()
         
     } else return
     }
@@ -129,7 +131,7 @@ const todocreateDiv = () => {
  
 const todoAdd_proj = (projName) => {
     const proj_name= document.createElement('option')
-    proj_name.textContent = projName
+    proj_name.textContent = projName;
      document.getElementById('select_project').appendChild(proj_name)
 
 }

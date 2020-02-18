@@ -22,7 +22,8 @@ const proj_new_btn = () => {
     const newProjBtn = document.createElement('button')
     newProjBtn.id="New_Proj"
     newProjBtn.classList.add("button2")
-    newProjBtn.innerHTML="Create a project"
+    
+  
     //////add new proj
     newProjBtn.addEventListener('click', ()=> {
         //document.getElementById('mainDiv').className ="blur";

@@ -3,13 +3,14 @@ const projectButon = () => {
   //HIDES AND SHOWS THE PROJECTS
     const createProjButton = document.createElement('button');
     const side_div = document.getElementById('sidebarDiv')
-    createProjButton.innerHTML ="Your Projects"
+   
+    createProjButton.id="UrProjBtn"
     createProjButton.classList.add("button2")
     const thisId = projHold.id
     createProjButton.addEventListener('click', () => {
       
         if (projHold.style.display === "none" ){
-          projHold.style.display = "block";
+          projHold.style.display = "grid";
           } else {
             projHold.style.display = "none";
           }

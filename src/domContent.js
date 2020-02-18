@@ -7,7 +7,7 @@ const listBUtton = () => {
 const hideTodos = document.getElementById('todos')
 const hide_show_listCard = document.createElement('button')
 hide_show_listCard.classList.add("button2")
-hide_show_listCard.innerHTML="Calendar"//hides and shows the todos
+hide_show_listCard.id="Calendar"//hides and shows the todos
 hide_show_listCard.addEventListener('click', ()=> {
     if (hideTodos.style.display === "grid") {
       hideTodos.style.display = "none";
@@ -92,6 +92,7 @@ const listCard = (i,projId) => {
    })
 
     
+   
     listcardDiv.appendChild(title_h1);
     listcardDiv.appendChild(due_h3);
     listcardDiv.appendChild(description_h3);

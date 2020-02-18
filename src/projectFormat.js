@@ -35,7 +35,7 @@ const projectAddForm = () => {
     const exitProj = document.createElement('button');
     exitProj.id="exitProji";
     exitProj.name="exitProject";
-    exitProj.innerHTML="Exit";
+  
     projDIV.appendChild(exitProj)
      
     const proj_submit_btn = document.createElement('input');
@@ -71,6 +71,7 @@ const projaddButton = () => {
         todoForm.todoAdd_proj(projTitle);
         document.getElementById('forms').style.display="none";
         document.getElementById('mainDiv').className ="";
+        project_Form.reset()
         
     }) 
 
